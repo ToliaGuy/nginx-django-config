@@ -4,7 +4,7 @@ It's always pain in the a$$ to set up nginx and to get it working properly.
 
 This is what works for me!
 
-## Docker compose setup
+## Docker Compose Setup
 
 ```yaml
 # docker-compose.yml
@@ -211,7 +211,7 @@ http {
 }
 ```
 
-## Useful make commands
+## Make Commands
 
 ```makefile
 # Makefile
