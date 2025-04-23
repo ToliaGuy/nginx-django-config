@@ -11,6 +11,7 @@ This is what works for me!
 
 
 services:
+  # for renewing SSL certificates
   certbot:
     container_name: certbot
     image: certbot/certbot
