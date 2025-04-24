@@ -250,9 +250,9 @@ hot_reload_nginx_conf:
 
 ## Issues when generating SSL certificate
 
-Initially when you are setting this up, you will have chickend and egg problem,
-where nginx is failing because you don't have ssl certificated generated yet, but
-you can't generate the certificates, because nginx is inaccessible.
+Initially when you are setting this up, you will have chicken and egg problem,
+where nginx is failing because you don't have ssl certificates generated yet, but
+you can't generate the certificates, because nginx is inaccessible (failing, because of lack of certificates).
 
 The solution, temporarily change you nginx configuration to this:
 
