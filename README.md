@@ -246,3 +246,35 @@ ssl_request:
 hot_reload_nginx_conf:
 	docker compose exec nginx nginx -s reload
 ```
+
+
+## Issues when generating SSL certificate
+
+Initially when you are setting this up, you will have chickend and egg problem,
+where nginx is failing because you don't have ssl certificated generated yet, but
+you can't generate the certificates, because nginx is inaccessible.
+
+The solution, temporarily change you nginx configuration to this:
+
+```conf
+events {}
+
+http {
+    
+    server {
+        listen 80;
+        server_name anglictinaprirozene.cz www.anglictinaprirozene.cz;
+
+        # For Let's Encrypt verification
+        location /.well-known/acme-challenge/ {
+            root /var/www/certbot;
+            try_files $uri =404;
+        }
+
+        # Temporary redirect for all other requests
+        location / {
+            return 200 "SSL Setup in progress";
+        }
+    }
+}
+```
