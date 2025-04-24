@@ -263,7 +263,7 @@ http {
     
     server {
         listen 80;
-        server_name anglictinaprirozene.cz www.anglictinaprirozene.cz;
+        server_name yourdomain.com www.yourdomain.com;
 
         # For Let's Encrypt verification
         location /.well-known/acme-challenge/ {
